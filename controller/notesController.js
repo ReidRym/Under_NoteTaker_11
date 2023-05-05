@@ -5,6 +5,7 @@ const router = require('express').Router();
 const path = require('path');
 const fs = require('fs');
 let database = require('../db/db.json');
+
 // base URL localhost:3001/api 
  router.get('/notes', (req, res) => {
 database=JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
