@@ -24,6 +24,16 @@ const db = mongoose.connection;
   db.once('open', function() {
     console.log('Connected to MongoDB');
   });
+  const handleError = (err, res) => {
+    res.status(500).send({
+      success: false,
+      message: 'There was an error processing your request',
+      error: err
+    });
+  };
+  app.use((err, req, res, next) => {
+    handleError(err, res);
+  });
   
 app.use('/api', notesController);
 app.use('/', htmlController);

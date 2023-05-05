@@ -179,5 +179,17 @@ if (window.location.pathname === '/notes') {
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
-
+const validateForm = () => {
+  if (!noteTitle.value.trim() || !noteText.value.trim()) {
+    alert('Please fill in all fields before submitting the form.');
+    return false;
+  }
+  return true;
+};
+saveNoteBtn.addEventListener('click', e => {
+  if (!validateForm()) {
+    return;
+  }
+  handleNoteSave();
+});
 getAndRenderNotes();
