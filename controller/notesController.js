@@ -12,10 +12,10 @@ router.get("/notes", (req, res) => {
   res.json(database);
 });
 
-router.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/notes.html"));
-});
-app.post("/notes", function (req, res) {
+// router.get("/notes", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../public/notes.html"));
+// });
+router.post("/notes", function (req, res) {
   var newNote = {
     id: Math.random(),
     title: req.body.title,
@@ -33,19 +33,23 @@ app.post("/notes", function (req, res) {
   );
   res.json(database);
 });
+
 router.delete("/notes/:id", (req, res) => {
   const noteId = req.params.id;
-  let jsonNotes = fs.readFileSync("./db/db.json", "utf8");
-  jsonNotes = JSON.parse(jsonNotes);
+  // let database = fs.readFileSync("./db/db.json", "utf8");
+  // database = JSON.parse(database);
 
-  jsonNotes = jsonNotes.filter(note => note.id !== noteId);
-  res.json(jsonNotes);
-});
+  database = database.filter(note => note.id !== noteId);
+ 
 
-fs.writeFileSync("./db/db.json", JSON.stringify(jsonNotes), err => {
+
+fs.writeFileSync("./db/db.json", JSON.stringify(database), err => {
   if (err) {
     throw err;
   }
+});
+
+res.json(database);
 });
 
 module.exports = router;
