@@ -44,7 +44,17 @@ MIT
 
 
 ## Features  
-feature  images her yo!
+Video guide:
+https://drive.google.com/file/d/1gSaQA-sBpKthylXwHJiV-7gHwGA2QM1g/view
+
+Image 1
+![1st notes image](https://github.com/ReidRym/Under_NoteTaker_11/assets/123789106/126ed4b0-293e-408e-9810-f618760c8ca7)
+
+Image 2
+![2real notes image](https://github.com/ReidRym/Under_NoteTaker_11/assets/123789106/c00fc680-86e1-4a53-8edc-03a7fa757a62)
+
+Image 3
+![3 notes image](https://github.com/ReidRym/Under_NoteTaker_11/assets/123789106/7b508634-3658-4529-9f64-27eeefb6af6c)
 
 ## Contributing
 link here
